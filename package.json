@@ -1,0 +1,78 @@
+{
+	"name": "RNTypescriptBoilerplate",
+	"description": "React Native with redux, Typescript boilerplate",
+	"author": {
+		"name": "Ivan Vukusic",
+		"email": "ivanvukusic15@gmail.com"
+	},
+	"repository": {
+		"url": "https://github.com/ivukusic/rn-typescript-boilerplate"
+	},
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"build": "npm run clean && npm run tsc --",
+		"clean": "rimraf -rf build/",
+		"lint": " tslint src/**/*.ts",
+		"precommit": "lint-staged",
+		"pretty": "prettier --write \"src/**/*.tsx\"",
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"start:ios": "concurrently -r 'npm run build' 'react-native run-ios'",
+		"start:android": "concurrently -r 'npm run build' 'react-native run-android'",
+		"tsc": "tsc --watch",
+		"test:unit": "jest",
+		"test": "yarn lint && jest"
+	},
+	"lint-staged": {
+		"*.js": [
+			"yarn lint",
+			"yarn pretty",
+			"git add"
+		]
+	},
+	"dependencies": {
+		"moment": "^2.20.1",
+		"react": "^16.3.1",
+		"react-native": "0.55.3",
+		"react-native-exception-handler": "^2.7.0",
+		"react-native-restart": "0.0.6",
+		"react-navigation": "^1.0.0-beta.23",
+		"react-navigation-redux-helpers": "^1.0.1",
+		"react-redux": "^5.0.6",
+		"redux": "^4.0.0",
+		"redux-thunk": "^2.2.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.0.0-beta.40",
+		"@types/jest": "^22.2.3",
+		"@types/react": "^16.3.12",
+		"@types/react-native": "^0.55.7",
+		"babel-jest": "22.4.3",
+		"babel-preset-react-native": "^4.0.0",
+		"concurrently": "^3.5.1",
+		"enzyme": "^3.3.0",
+		"enzyme-adapter-react-16": "^1.1.1",
+		"enzyme-to-json": "^3.3.3",
+		"husky": "^0.14.3",
+		"jest": "22.4.3",
+		"lint-staged": "^7.0.0",
+		"prettier": "^1.11.1",
+		"react-native-typescript-transformer": "^1.2.5",
+		"react-test-renderer": "16.3.2",
+		"rimraf": "^2.6.2",
+		"tslib": "^1.9.0",
+		"typescript": "^2.8.3"
+	},
+	"jest": {
+		"preset": "react-native",
+		"testMatch": [
+			"**/?(*.)test.js?(x)"
+		],
+		"snapshotSerializers": [
+			"enzyme-to-json/serializer"
+		],
+		"setupFiles": [
+			"<rootDir>/jest/setup.js"
+		]
+	}
+}

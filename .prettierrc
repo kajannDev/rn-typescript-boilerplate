@@ -1,0 +1,10 @@
+{
+    "filepath": "src/**/*.js",
+    "printWidth": 120,
+    "parser": "babylon",
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "tabWidth": 2
+  }

@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "experimentalDecorators": true,
+        "jsx": "react-native",
+        "module": "es6",
+        "moduleResolution": "node",
+        "outDir": "build",
+        "preserveConstEnums": true,
+        "removeComments": true,
+        "rootDir": "src",
+        "sourceMap": false,
+        "typeRoots": [ "./types", "./node_modules/@types"]
+    },
+    "exclude": [
+        "index.js",
+        "rn-cli.config.js",
+        "build",
+        "node_modules",
+        "jest",
+        "__tests__"
+    ]
+}
